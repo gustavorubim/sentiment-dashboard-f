@@ -22,11 +22,25 @@ This structure allows for a clear separation of concerns, ensuring that data pro
    ```bash
    git clone <repository-url>
    ```
-2. **Install Dependencies**:
+2. **Extract Review Data**:
+   - For Linux/Mac:
+   ```bash
+   cd public && unzip reviews.zip && cd ..
+   ```
+   - For Windows (using PowerShell):
+   ```powershell
+   cd public; Expand-Archive -Path reviews.zip -DestinationPath .; cd ..
+   ```
+   - For Windows (using Command Prompt):
+   ```cmd
+   cd public && tar -xf reviews.zip && cd ..
+   ```
+
+3. **Install Dependencies**:
    ```bash
    npm install
    ```
-3. **Prerequisites**:  
+4. **Prerequisites**:  
    - Ensure you have Node.js (version 14 or higher) installed.  
    - Familiarity with npm and modern JavaScript/React tooling is recommended.
 
