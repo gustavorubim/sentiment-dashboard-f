@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import IntroPage from './IntroPage';
 import Dashboard from './Dashboard';
 import AnalysisDashboard from './AnalysisDashboard';
 import ModelMetricsDashboard from './ModelMetricsDashboard';
@@ -22,7 +23,8 @@ function App() {
           alignItems: 'center'
         }}>
           <div>
-            <Link to="/" className="nav-link" style={{ marginRight: '1rem' }}>Spatial Sentiment Analysis by model</Link>
+            <Link to="/" className="nav-link" style={{ marginRight: '1rem' }}>Home</Link>
+            <Link to="/spatial-sentiment" className="nav-link" style={{ marginRight: '1rem' }}>Spatial Sentiment Analysis by model</Link>
             <Link to="/disagreement" className="nav-link" style={{ marginRight: '1rem' }}>Spatial Sentiment Disagreement by model</Link>
             <Link to="/analysis" className="nav-link" style={{ marginRight: '1rem' }}>Core Model Metrics</Link>
             <Link to="/metrics" className="nav-link" style={{ marginRight: '1rem' }}>Model Metrics Bar Chart</Link>
@@ -39,7 +41,8 @@ function App() {
             transition={{ duration: 0.3 }}
           >
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<IntroPage />} />
+          <Route path="/spatial-sentiment" element={<Dashboard />} />
           <Route path="/analysis" element={<AnalysisDashboard />} />
           <Route path="/metrics" element={<ModelMetricsDashboard />} />
           <Route path="/review-detail" element={<ReviewDetailDashboard />} />
